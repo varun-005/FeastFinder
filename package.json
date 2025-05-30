@@ -17,9 +17,10 @@
   "scripts": {
     "start": "node server.js",
     "dev": "parcel index.html",
-    "build": "npm run clean && parcel build index.html --dist-dir build --public-url ./",
+    "build": "parcel build index.html --dist-dir build --public-url ./",
     "clean": "rimraf .parcel-cache dist build",
     "frontend": "parcel index.html",
-    "backend": "node server.js"
+    "backend": "node server.js",
+    "vercel-build": "parcel build index.html --dist-dir build --public-url ./"
   }
 }
