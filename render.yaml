@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: feastfinder-api
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm run backend
+    envVars:
+      - key: PORT
+        value: 3000
