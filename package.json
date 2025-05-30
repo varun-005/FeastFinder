@@ -17,7 +17,7 @@
   "scripts": {
     "start": "node server.js",
     "dev": "parcel index.html",
-    "build": "parcel build index.html --dist-dir build --public-url ./",
+    "build": "parcel build index.html",
     "clean": "rimraf .parcel-cache dist build",
     "frontend": "parcel index.html",
     "backend": "node server.js",
