@@ -13,8 +13,10 @@
   "scripts": {
     "start": "node server.js",
     "dev": "parcel index.html",
-    "build": "npm run clean && parcel build index.html",
-    "clean": "rimraf .parcel-cache dist"
+    "build": "npm run clean && parcel build index.html --dist-dir build",
+    "clean": "rimraf .parcel-cache dist build",
+    "frontend": "parcel index.html",
+    "backend": "node server.js"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.21",
