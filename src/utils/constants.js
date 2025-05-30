@@ -3,7 +3,8 @@ export const CDN_URL = `https://media-assets.swiggy.com/swiggy/image/upload/fl_l
 export const LOGO_URL = "FeastFinder";
 
 // API Base URL
-export const API_BASE_URL = "https://feastfinder-api.onrender.com";
+export const API_BASE_URL =
+  process.env.API_BASE_URL || "https://feastfinder-api.onrender.com";
 export const RESTAURANT_API_URL = `${API_BASE_URL}/api/restaurants`;
 export const MENU_API_URL = `${API_BASE_URL}/api/menu/`;
 // export const MENU_API_URL =
