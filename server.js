@@ -9,12 +9,9 @@ const PORT = process.env.PORT || 3000;
 // Enable CORS for all routes
 app.use(cors());
 
-// Serve static files from the build directory
-app.use(express.static(path.join(__dirname, "build")));
-
-// Handle React routing, return all requests to React app
-app.get("*", function (req, res) {
-  res.sendFile(path.join(__dirname, "build", "index.html"));
+// Health check endpoint
+app.get("/", (req, res) => {
+  res.json({ status: "API is running" });
 });
 
 // API proxy endpoint for restaurant list
@@ -58,11 +55,6 @@ app.get("/api/menu/:resId", async (req, res) => {
     console.error("Error fetching menu:", error.message);
     res.status(500).json({ error: "Failed to fetch menu" });
   }
-});
-
-// For any other route, serve the index.html
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "dist", "index.html"));
 });
 
 app.listen(PORT, () => {
